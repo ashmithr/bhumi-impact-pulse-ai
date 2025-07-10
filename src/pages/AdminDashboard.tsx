@@ -24,74 +24,78 @@ const AdminDashboard = () => {
   };
 
   if (!isAuthenticated) {
-    return <div>Loading...</div>;
+    return <div className="text-center text-white mt-20">Loading...</div>;
   }
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-gradient-to-br from-[#1E1E2F] to-[#2A2A40] text-white">
       {/* Header */}
-      <header className="bg-white border-b border-border p-4">
+      <header className="border-b border-border/40 backdrop-blur-md bg-white/5 p-4 sticky top-0 z-10">
         <div className="container mx-auto flex justify-between items-center">
-          <h1 className="text-2xl font-bold bg-gradient-hero bg-clip-text text-transparent">
-            Bhumi Admin Dashboard
-          </h1>
-          <Button variant="outline" onClick={handleLogout}>
+          <h1 className="text-2xl font-bold text-white">Bhumi Admin Dashboard</h1>
+          <Button
+            variant="outline"
+            className="border-white text-white hover:bg-white hover:text-black transition"
+            onClick={handleLogout}
+          >
             <LogOut className="h-4 w-4 mr-2" />
             Logout
           </Button>
         </div>
       </header>
 
-      <div className="container mx-auto p-6">
+      <div className="container mx-auto px-4 py-8">
         {/* Quick Stats */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-          <Card className="bg-gradient-hero text-white">
-            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium opacity-90">Total Visitors</CardTitle>
-              <Users className="h-4 w-4" />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+          <Card className="bg-white/10 backdrop-blur-md rounded-xl shadow-lg transition-transform hover:scale-[1.02]">
+            <CardHeader className="flex flex-row items-center justify-between pb-2">
+              <CardTitle className="text-sm font-medium text-gray-300">Total Visitors</CardTitle>
+              <Users className="h-5 w-5 text-blue-400" />
             </CardHeader>
             <CardContent>
-              <div className="text-2xl font-bold">2,847</div>
-              <p className="text-xs opacity-80">+12% from last week</p>
+              <div className="text-3xl font-bold text-white">2,847</div>
+              <p className="text-xs text-gray-400">+12% from last week</p>
             </CardContent>
           </Card>
 
-          <Card className="bg-gradient-impact text-white">
-            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium opacity-90">Total Donations</CardTitle>
-              <DollarSign className="h-4 w-4" />
+          <Card className="bg-white/10 backdrop-blur-md rounded-xl shadow-lg hover:scale-[1.02]">
+            <CardHeader className="flex flex-row items-center justify-between pb-2">
+              <CardTitle className="text-sm font-medium text-gray-300">Total Donations</CardTitle>
+              <DollarSign className="h-5 w-5 text-green-400" />
             </CardHeader>
             <CardContent>
-              <div className="text-2xl font-bold">₹2,50,000</div>
-              <p className="text-xs opacity-80">+25% from last month</p>
+              <div className="text-3xl font-bold text-white">₹2,50,000</div>
+              <p className="text-xs text-gray-400">+25% from last month</p>
             </CardContent>
           </Card>
 
-          <Card className="bg-gradient-trust text-white">
-            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium opacity-90">Volunteers</CardTitle>
-              <Heart className="h-4 w-4" />
+          <Card className="bg-white/10 backdrop-blur-md rounded-xl shadow-lg hover:scale-[1.02]">
+            <CardHeader className="flex flex-row items-center justify-between pb-2">
+              <CardTitle className="text-sm font-medium text-gray-300">Volunteers</CardTitle>
+              <Heart className="h-5 w-5 text-pink-400" />
             </CardHeader>
             <CardContent>
-              <div className="text-2xl font-bold">156</div>
-              <p className="text-xs opacity-80">+8 new this week</p>
+              <div className="text-3xl font-bold text-white">156</div>
+              <p className="text-xs text-gray-400">+8 new this week</p>
             </CardContent>
           </Card>
 
-          <Card className="border-primary border-2">
-            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium">Conversion Rate</CardTitle>
-              <TrendingUp className="h-4 w-4 text-primary" />
+          <Card className="border-2 border-purple-500 rounded-xl shadow-lg hover:scale-[1.02] bg-white/5 backdrop-blur-md">
+            <CardHeader className="flex flex-row items-center justify-between pb-2">
+              <CardTitle className="text-sm font-medium text-purple-300">Conversion Rate</CardTitle>
+              <TrendingUp className="h-5 w-5 text-purple-400" />
             </CardHeader>
             <CardContent>
-              <div className="text-2xl font-bold text-primary">8.5%</div>
-              <p className="text-xs text-muted-foreground">+2.1% from last week</p>
+              <div className="text-3xl font-bold text-white">8.5%</div>
+              <p className="text-xs text-gray-400">+2.1% from last week</p>
             </CardContent>
           </Card>
         </div>
 
         {/* Detailed Analytics */}
-        <AdminStats />
+        <div className="rounded-xl bg-white/5 p-6 shadow-lg backdrop-blur-md">
+          <AdminStats />
+        </div>
       </div>
     </div>
   );
