@@ -52,9 +52,10 @@ const Navbar = () => {
             <Button variant="volunteer" size="sm">
               Volunteer
             </Button>
-            <Button variant="donate" size="sm">
-              Donate Now
+            <Button variant="donate" size="sm" asChild>
+              <Link to="/donate">Donate Now</Link>
             </Button>
+            <Link to="/admin" className="text-xs text-muted-foreground hover:text-primary">Admin</Link>
           </div>
 
           {/* Mobile menu button */}
@@ -101,9 +102,10 @@ const Navbar = () => {
                 <Button variant="volunteer" size="sm">
                   Volunteer
                 </Button>
-                <Button variant="donate" size="sm">
-                  Donate Now
+                <Button variant="donate" size="sm" asChild>
+                  <Link to="/donate">Donate Now</Link>
                 </Button>
+                <Link to="/admin" className="text-xs text-muted-foreground hover:text-primary" onClick={() => setIsOpen(false)}>Admin</Link>
               </div>
             </div>
           </div>
