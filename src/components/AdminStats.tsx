@@ -11,7 +11,7 @@ const AdminStats = () => {
   ];
 
   const nudgePerformance = [
-    { text: "Thousands of orphans are waiting for love", clicks: 234, ctr: "12.5%" },
+    { text: "Support orphans with kindness today", clicks: 234, ctr: "12.5%" },
     { text: "Your ₹100 today can send a child to school", clicks: 189, ctr: "10.8%" },
     { text: "Join our youth force transforming lives", clicks: 156, ctr: "9.2%" },
     { text: "Explore how Bhumi is making change happen", clicks: 98, ctr: "5.6%" }
@@ -65,7 +65,7 @@ const AdminStats = () => {
           <CardContent className="p-4">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-xs text-muted-foreground">Amount Today</p>
+                <p className="text-xs text-muted-foreground">Amount Today 💰</p>
                 <p className="text-2xl font-bold text-trust">₹{realtimeStats.amountToday.toLocaleString()}</p>
               </div>
               <DollarSign className="h-4 w-4 text-trust" />
@@ -89,7 +89,7 @@ const AdminStats = () => {
           <CardContent className="p-4">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-xs text-muted-foreground">Conversion</p>
+                <p className="text-xs text-muted-foreground">Conversion Efficiency</p>
                 <p className="text-2xl font-bold text-primary">{realtimeStats.conversionRate}%</p>
               </div>
               <TrendingUp className="h-4 w-4 text-primary" />
@@ -114,7 +114,7 @@ const AdminStats = () => {
         {/* Quiz Segments */}
         <Card>
           <CardHeader>
-            <CardTitle>Visitor Segments (From Quiz)</CardTitle>
+            <CardTitle>Audience Segments</CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
             {quizData.map((segment) => (
@@ -166,7 +166,7 @@ const AdminStats = () => {
             ))}
             <div className="mt-4 p-3 bg-gradient-impact text-white rounded-lg text-center">
               <p className="text-sm opacity-90">Total Allocated This Month</p>
-              <p className="text-xl font-bold">₹2,50,000</p>
+              <p className="text-xl font-bold">₹2,75,000</p>
             </div>
           </CardContent>
         </Card>
