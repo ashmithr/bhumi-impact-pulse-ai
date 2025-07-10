@@ -98,20 +98,22 @@ const Blog = () => {
         </section>
 
         {/* Newsletter Signup */}
-        <section className="mt-20 bg-slate-50 border border-slate-200 rounded-lg p-10 text-center shadow-sm">
-          <h3 className="text-2xl font-semibold mb-4">Join the Movement</h3>
-          <p className="mb-6 text-slate-600">Get our best stories, data insights, and volunteer opportunities delivered to your inbox.</p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-xl mx-auto">
-            <input 
-              type="email" 
-              placeholder="Enter your email" 
-              className="px-4 py-2 border border-slate-300 rounded-md flex-1 focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
-            <button className="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition-colors">
-              Subscribe
-            </button>
-          </div>
-        </section>
+      <section className="mt-20 bg-gradient-to-br from-blue-50 to-white border border-blue-100 rounded-xl p-12 text-center shadow-md">
+  <h3 className="text-3xl font-bold mb-4 text-blue-900">Subscribe to Impact Updates</h3>
+  <p className="mb-6 text-blue-700 text-base">
+    Weekly insights, success stories, and opportunities — directly in your inbox.
+  </p>
+  <form className="flex flex-col sm:flex-row gap-4 justify-center max-w-lg mx-auto">
+    <input 
+      type="email" 
+      placeholder="Your email address" 
+      className="px-4 py-2 border border-blue-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 flex-1"
+    />
+    <button className="bg-blue-700 text-white px-6 py-2 rounded-md hover:bg-blue-800 transition-colors">
+      Get Updates
+    </button>
+  </form>
+</section>
       </main>
     </div>
   );
