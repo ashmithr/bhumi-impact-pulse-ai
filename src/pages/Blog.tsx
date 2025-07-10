@@ -1,7 +1,7 @@
 import Navbar from "@/components/Navbar";
 import SocialProofBanner from "@/components/SocialProofBanner";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { CalendarDays, User, Heart } from "lucide-react";
+import { CalendarDays, User } from "lucide-react";
 
 const Blog = () => {
   const blogPosts = [
@@ -11,7 +11,7 @@ const Blog = () => {
       excerpt: "Discover how artificial intelligence helps us track and optimize our social impact in real-time, ensuring every donation creates maximum change.",
       author: "Priya Sharma",
       date: "December 15, 2024",
-      image: "/api/placeholder/400/200",
+      image: "/images/ai-impact.jpg",
       category: "Technology"
     },
     {
@@ -20,7 +20,7 @@ const Blog = () => {
       excerpt: "Meet Rahul, whose journey from the streets of Mumbai to becoming a successful software engineer showcases the transformative power of education.",
       author: "Amit Patel",
       date: "December 12, 2024",
-      image: "/api/placeholder/400/200",
+      image: "/images/success-story.jpg",
       category: "Success Stories"
     },
     {
@@ -29,7 +29,7 @@ const Blog = () => {
       excerpt: "Understanding behavioral psychology helps us create more meaningful connections between donors and beneficiaries, increasing long-term engagement.",
       author: "Dr. Meera Krishnan",
       date: "December 10, 2024",
-      image: "/api/placeholder/400/200",
+      image: "/images/psychology.jpg",
       category: "Research"
     },
     {
@@ -38,103 +38,81 @@ const Blog = () => {
       excerpt: "Our holistic approach to education doesn't just teach reading and writing - it builds entire communities and creates lasting social change.",
       author: "Vikash Singh",
       date: "December 8, 2024",
-      image: "/api/placeholder/400/200",
+      image: "/images/sustainable-education.jpg",
       category: "Impact"
     }
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="bg-white text-slate-900 min-h-screen">
       <Navbar />
       <SocialProofBanner />
-      
-      <div className="container mx-auto px-4 py-12">
-        {/* Hero Section */}
-        <div className="text-center mb-16">
-          <h1 className="text-5xl font-bold mb-6 bg-gradient-hero bg-clip-text text-transparent">
-            Stories of Change
+
+      <main className="container mx-auto px-4 py-12">
+        {/* Hero */}
+        <section className="text-center max-w-4xl mx-auto mb-16">
+          <h1 className="text-5xl font-serif font-bold mb-4">
+            Stories That Inspire
           </h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Real stories, real impact, real change. Discover how technology and compassion are transforming lives across India.
+          <p className="text-lg text-slate-600">
+            Explore how compassion and innovation are changing lives every day. Real stories from real people creating real impact.
           </p>
-        </div>
+        </section>
 
-        {/* Featured Post */}
-        <div className="mb-16">
-          <Card className="overflow-hidden bg-gradient-impact text-white">
-            <div className="grid md:grid-cols-2 gap-0">
-              <div className="p-8 flex flex-col justify-center">
-                <div className="text-sm opacity-80 mb-2">FEATURED STORY</div>
-                <h2 className="text-3xl font-bold mb-4">{blogPosts[0].title}</h2>
-                <p className="mb-6 opacity-90">{blogPosts[0].excerpt}</p>
-                <div className="flex items-center space-x-4 text-sm opacity-80">
-                  <div className="flex items-center space-x-1">
-                    <User className="h-4 w-4" />
-                    <span>{blogPosts[0].author}</span>
-                  </div>
-                  <div className="flex items-center space-x-1">
-                    <CalendarDays className="h-4 w-4" />
-                    <span>{blogPosts[0].date}</span>
-                  </div>
-                </div>
-              </div>
-              <div className="h-64 md:h-auto bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
-                <Heart className="h-24 w-24 text-white/50" />
-              </div>
+        {/* Featured Article */}
+        <section className="grid md:grid-cols-2 gap-8 mb-16 items-center">
+          <div className="aspect-video overflow-hidden rounded-lg shadow-md">
+            <img src={blogPosts[0].image} alt={blogPosts[0].title} className="w-full h-full object-cover" />
+          </div>
+          <div>
+            <span className="text-sm font-medium text-blue-600 uppercase tracking-wide">Featured</span>
+            <h2 className="text-3xl font-bold mt-2 mb-4">{blogPosts[0].title}</h2>
+            <p className="text-slate-700 mb-4">{blogPosts[0].excerpt}</p>
+            <div className="text-sm text-slate-500 flex space-x-6">
+              <span className="flex items-center gap-1"><User className="w-4 h-4" /> {blogPosts[0].author}</span>
+              <span className="flex items-center gap-1"><CalendarDays className="w-4 h-4" /> {blogPosts[0].date}</span>
             </div>
-          </Card>
-        </div>
+          </div>
+        </section>
 
-        {/* Blog Posts Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Other Blog Cards */}
+        <section className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {blogPosts.slice(1).map((post) => (
-            <Card key={post.id} className="group hover:shadow-warm transition-all duration-300 hover:scale-105">
-              <CardHeader className="p-0">
-                <div className="h-48 bg-gradient-to-br from-primary/10 to-accent/10 rounded-t-lg flex items-center justify-center">
-                  <Heart className="h-12 w-12 text-primary/50" />
-                </div>
+            <Card key={post.id} className="overflow-hidden transition-shadow hover:shadow-xl">
+              <CardHeader className="p-0 h-48 overflow-hidden">
+                <img src={post.image} alt={post.title} className="w-full h-full object-cover" />
               </CardHeader>
-              <CardContent className="p-6">
-                <div className="text-xs text-primary font-semibold mb-2 uppercase tracking-wide">
-                  {post.category}
-                </div>
-                <CardTitle className="text-xl mb-3 group-hover:text-primary transition-colors">
+              <CardContent className="p-4">
+                <span className="text-xs uppercase font-medium text-sky-600">{post.category}</span>
+                <CardTitle className="text-lg font-semibold mt-2 mb-2 hover:text-sky-700 transition-colors">
                   {post.title}
                 </CardTitle>
-                <p className="text-muted-foreground text-sm mb-4 line-clamp-3">
-                  {post.excerpt}
-                </p>
-                <div className="flex items-center justify-between text-xs text-muted-foreground">
-                  <div className="flex items-center space-x-1">
-                    <User className="h-3 w-3" />
-                    <span>{post.author}</span>
-                  </div>
-                  <div className="flex items-center space-x-1">
-                    <CalendarDays className="h-3 w-3" />
-                    <span>{post.date}</span>
-                  </div>
+                <p className="text-slate-600 text-sm mb-3 line-clamp-3">{post.excerpt}</p>
+                <div className="text-xs text-slate-500 flex justify-between">
+                  <span className="flex items-center gap-1"><User className="w-3 h-3" /> {post.author}</span>
+                  <span className="flex items-center gap-1"><CalendarDays className="w-3 h-3" /> {post.date}</span>
                 </div>
               </CardContent>
             </Card>
           ))}
-        </div>
+        </section>
 
         {/* Newsletter Signup */}
-        <div className="mt-16 bg-gradient-trust text-white p-8 rounded-lg text-center">
-          <h3 className="text-2xl font-bold mb-4">Stay Connected with Our Impact</h3>
-          <p className="mb-6 opacity-90">Get weekly updates on our programs, success stories, and how your contributions are making a difference.</p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
+        <section className="mt-20 bg-slate-50 border border-slate-200 rounded-lg p-10 text-center shadow-sm">
+          <h3 className="text-2xl font-semibold mb-4">Join the Movement</h3>
+          <p className="mb-6 text-slate-600">Get our best stories, data insights, and volunteer opportunities delivered to your inbox.</p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-xl mx-auto">
             <input 
               type="email" 
               placeholder="Enter your email" 
-              className="px-4 py-2 rounded-md text-foreground flex-1"
+              className="px-4 py-2 border border-slate-300 rounded-md flex-1 focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
-            <button className="bg-white text-trust px-6 py-2 rounded-md font-semibold hover:bg-gray-100 transition-colors">
+            <button className="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition-colors">
               Subscribe
             </button>
           </div>
-        </div>
-      </div>
+        </section>
+      </main>
     </div>
   );
 };
