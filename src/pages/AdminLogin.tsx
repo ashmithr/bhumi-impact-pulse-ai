@@ -1,9 +1,9 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Shield, Eye, EyeOff } from "lucide-react";
+import { Shield, Eye, EyeOff, ArrowLeft } from "lucide-react";
 import { toast } from "@/hooks/use-toast";
 
 const AdminLogin = () => {
@@ -39,6 +39,10 @@ const AdminLogin = () => {
 
   return (
     <div className="min-h-screen bg-gradient-hero flex items-center justify-center p-4">
+      <Link to="/" className="absolute top-4 left-4 text-white/80 hover:text-white flex items-center gap-2 transition-colors">
+        <ArrowLeft className="h-4 w-4" />
+        Back to Home
+      </Link>
       <Card className="w-full max-w-md shadow-glow">
         <CardHeader className="text-center">
           <div className="bg-gradient-impact text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
