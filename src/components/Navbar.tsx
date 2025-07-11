@@ -1,7 +1,8 @@
+
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Heart, Menu, X } from "lucide-react";
+import { MessageCircle, Heart, Menu, X } from "lucide-react";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -32,6 +33,15 @@ const Navbar = () => {
               }`}
             >
               Home
+            </Link>
+            <Link 
+              to="/volunteer-chat" 
+              className={`font-medium transition-colors hover:text-primary flex items-center space-x-1 ${
+                isActive('/volunteer-chat') ? 'text-primary' : 'text-foreground'
+              }`}
+            >
+              <MessageCircle className="h-4 w-4" />
+              <span>Volunteer Connect</span>
             </Link>
             <Link 
               to="/donate" 
@@ -79,6 +89,16 @@ const Navbar = () => {
                 onClick={() => setIsOpen(false)}
               >
                 Home
+              </Link>
+              <Link 
+                to="/volunteer-chat" 
+                className={`font-medium transition-colors hover:text-primary flex items-center space-x-1 ${
+                  isActive('/volunteer-chat') ? 'text-primary' : 'text-foreground'
+                }`}
+                onClick={() => setIsOpen(false)}
+              >
+                <MessageCircle className="h-4 w-4" />
+                <span>Volunteer Connect</span>
               </Link>
               <Link 
                 to="/donate" 
