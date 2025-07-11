@@ -9,6 +9,7 @@ import Blog from "./pages/Blog";
 import AdminLogin from "./pages/AdminLogin";
 import AdminDashboard from "./pages/AdminDashboard";
 import NotFound from "./pages/NotFound";
+import VolunteerChat from "./pages/VolunteerChat";
 
 const queryClient = new QueryClient();
 
@@ -23,6 +24,7 @@ const App = () => (
           <Route path="/donate" element={<Donate />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/admin" element={<AdminLogin />} />
+          <Route path="/volunteer-chat" element={<VolunteerChat />} />
           <Route path="/admin/dashboard" element={<AdminDashboard />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
